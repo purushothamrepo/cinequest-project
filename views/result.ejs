@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinequest - Searched Results</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styles */
+        .navbar-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 1rem;
+            color: #ffffff;
+        }
+        .navbar-brand {
+            color: #ff2d55;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.8rem;
+        }
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .search-form {
+            display: flex;
+            gap: 1rem;
+        }
+        .search-form input {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        .search-form button {
+            background: #ff2d55;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        /* Movie Cards */
+        .movie-card {
+            background: #1a1a1a;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: translateY(-5px);
+        }
+        .card-img-top {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .know-more-btn {
+    border: 2px solid #ff2d55;
+    color: #ff2d55;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Add this line */
+}
+        .know-more-btn:hover {
+            background: #ff2d55;
+            color: #fff;
+        }
+        /* Error Message */
+        .error-message {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background: #0f0f0f;">
+    <header class="navbar-custom">
+        <a href="/" class="navbar-brand">Cinequest</a>
+        <div class="navbar-menu">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <form action="/result" method="GET" class="search-form">
+                <input type="text" name="movieName" placeholder="Search movies...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="container py-5">
+        <% if (movieData.Response === 'False') { %>
+            <div class="text-center">
+                <h1 class="error-message">Movie Not Found!</h1>
+                <p class="text" style="color: #ffffff; font-size: 1.2rem; text-align: center;">
+                    Please try searching with another title.
+                </p>
+                
+            </div>
+        <% } else { %>
+            
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                <% movieData.Search.forEach(function(movie) { %>
+                <div class="col">
+                    <div class="card h-100 movie-card">
+                        <img src="<%= movie.Poster %>" class="card-img-top" alt="<%= movie.Title %>">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-white mb-3"><%= movie.Title %></h5>
+                            <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600; margin-top: 1rem;">
+                                <%= movie.Year %>
+                            </p>
+                            
+                            <a href="/result/<%= movie.imdbID %>" class="know-more-btn">Explore More</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

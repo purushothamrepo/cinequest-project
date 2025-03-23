@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>/* Header Styles */
+      .navbar-custom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 100%);
+          padding: 1rem;
+          color: #ffffff;
+      }
+      .navbar-brand {
+          color: #ff2d55;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+          text-decoration: none;
+          font-size: 1.8rem;
+      }
+      .navbar-menu {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+      }
+      .navbar-menu a {
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: 600;
+      }
+      .search-form {
+          display: flex;
+          gap: 1rem;
+      }
+      .search-form input {
+          background: rgba(255, 255, 255, 0.05);
+          border: none;
+          color: #ffffff;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+      }
+      .search-form button {
+          background: #ff2d55;
+          color: #ffffff;
+          border: none;
+          padding: 0.5rem 1.5rem;
+          border-radius: 20px;
+          font-weight: 600;
+      }
+        /* Navbar Styles */
+        .navbar-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 1rem;
+            color: #ffffff;
+        }
+        .navbar-brand {
+            color: #ff2d55;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-menu a {
+            color: #ffffff;
+            margin-right: 1rem;
+            text-decoration: none;
+        }
+        .search-form {
+            display: flex;
+        }
+        .search-form input {
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: #ffffff;
+            padding: 0.5rem;
+        }
+        .search-form button {
+            background: #ff2d55;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar-menu.show {
+                display: flex;
+            }
+            .navbar-toggler {
+                display: block;
+            }
+        }
+        /* General Styles */
+        body {
+            background: #0f0f0f;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2 {
+            color: #ff2d55;
+        }
+    </style>
+</head>
+<body>
+  <header class="navbar-custom">
+    <a href="/" class="navbar-brand">Cinequest</a>
+    <div class="navbar-menu">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <form action="/result" method="GET" class="search-form">
+            <input type="text" name="movieName" placeholder="Search movies...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</header>
+   
+    <div class="container">
+      <div class="about-cinequest">
+        <div class="container">
+          <div class="project-dossier">
+            <h1 class="project-title" style="color: #ff2d55;">Cinequest: Technical Dossier</h1>
+
+              
+              <section class="project-overview">
+                  <h2>Architectural Blueprint</h2>
+                  <h3>Core Purpose</h3>
+        <p>CineQuest serves as a comprehensive movie intelligence platform that enables users to:</p>
+        <ul>
+            <li>Search and discover films using the OMDB API database</li>
+            <li>Access detailed movie metadata including cast, crew, and production details</li>
+            <li>Explore cinematic information through an intuitive visual interface</li>
+            <li>Make informed viewing decisions with aggregated ratings and analytics</li>
+        </ul>
+                  
+                  
+                  <article class="architecture-detail">
+                      <h3>Server-Side Implementation</h3>
+                      <p>
+                          Built on Node.js with Express framework, the backend implements:
+                      </p>
+                      <ul>
+                          <li>Endpoint routing with RESTful convention</li>
+                          <li>Middleware stack for request processing</li>
+                          <li>OMDB API integration via Axios client</li>
+                          <li>Environment configuration management</li>
+                      </ul>
+                  </article>
+      
+                  <article class="architecture-detail">
+                      <h3>Client-Side Implementation</h3>
+                      <p>
+                          The presentation layer combines traditional server-side rendering with modern frontend practices:
+                      </p>
+                      <ul>
+                          <li>EJS templating engine for dynamic content</li>
+                          <li>Responsive CSS grid system</li>
+                          <li>Progressive enhancement strategy</li>
+                          <li>Asynchronous content loading patterns</li>
+                      </ul>
+                  </article>
+              </section>
+      
+              <section class="development-process">
+                  <h2>Implementation Chronology</h2>
+                  
+                  <article class="phase">
+                      <h3>Initialization Phase</h3>
+                      <p>
+                          Project scaffolding established through:
+                      </p>
+                      <ul>
+                          <li>Express application boilerplate configuration</li>
+                          <li>Middleware pipeline initialization</li>
+                          <li>Environment variable architecture</li>
+                      </ul>
+                  </article>
+      
+                  <article class="phase">
+                      <h3>Core Development Phase</h3>
+                      <p>
+                          Feature implementation focused on:
+                      </p>
+                      <ul>
+                          <li>Search endpoint with query parameter validation</li>
+                          <li>Movie detail route with ID parameterization</li>
+                          <li>Error handling middleware implementation</li>
+                          <li>EJS template hierarchy construction</li>
+                      </ul>
+                  </article>
+      
+                  <article class="phase">
+                      <h3>Deployment Phase</h3>
+                      <p>
+                          Production readiness achieved through:
+                      </p>
+                      <ul>
+                          <li>AWS EC2 instance provisioning</li>
+                          <li>Web server configuration (apache)</li>
+                          <li>Process management with PM2</li>
+                          <li>GitHub repository synchronization</li>
+                      </ul>
+                  </article>
+              </section>
+      
+              <section class="technical-specification">
+                  <h2>Technology Matrix</h2>
+                  <div class="spec-grid">
+                      <article class="spec-item">
+                          <h3>Core Dependencies</h3>
+                          <ul>
+                              <li>Express 4.x</li>
+                              <li>EJS 3.x</li>
+                              <li>Axios 1.x</li>
+                              <li>dotenv 16.x</li>
+                          </ul>
+                      </article>
+      
+                      <article class="spec-item">
+                          <h3>Development Toolchain</h3>
+                          <ul>
+                              <li>VS Code Editor</li>
+                              <li>Git version control</li>
+                              <li>Postman API client</li>
+                              <li>AWS Management Console</li>
+                          </ul>
+                      </article>
+      
+                      <article class="spec-item">
+                          <h3>Deployment Stack</h3>
+                          <ul>
+                              <li>Ubuntu 22.04 LTS</li>
+                              <li>Node.js 18.x</li>
+                              <li>Apache</li>
+                              <li>PM2 process manager</li>
+                          </ul>
+                      </article>
+                  </div>
+              </section>
+          </div>
+      </div>
+      
+      <style>
+          .project-dossier {
+              max-width: 1000px;
+              margin: 0 auto;
+              font-family: 'Segoe UI', system-ui;
+          }
+      
+          .lead-paragraph {
+              font-size: 1.1rem;
+              line-height: 1.8;
+              color: #e0e0e0;
+              margin: 2rem 0;
+          }
+      
+          .architecture-detail {
+              background: #1a1a1a;
+              border-radius: 8px;
+              padding: 1.5rem;
+              margin: 2rem 0;
+              border-left: 4px solid #ff2d55;
+          }
+      
+          .phase {
+              margin: 2rem 0;
+              padding: 1.5rem;
+              background: #252525;
+              border-radius: 8px;
+          }
+      
+          .spec-grid {
+              display: grid;
+              gap: 1.5rem;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              margin: 2rem 0;
+          }
+      
+          .spec-item {
+              background: #1a1a1a;
+              padding: 1.5rem;
+              border-radius: 8px;
+          }
+      
+          h2, h3 {
+              color: #ff2d55;
+              margin: 1.5rem 0;
+          }
+      
+          ul {
+              list-style-type: none;
+              padding-left: 1.5rem;
+          }
+      
+          li {
+              margin: 0.8rem 0;
+              position: relative;
+          }
+      
+          li::before {
+              content: "▹";
+              position: absolute;
+              left: -1.3rem;
+              color: #ff2d55;
+          }
+      </style>
+    </div>
+    
+    <style>
+        .about-cinequest {
+            font-family: 'Arial', sans-serif; /* Example font */
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    
+        .about-cinequest h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    
+        .about-cinequest h2 {
+            color: #555;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+    
+        .about-cinequest ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .about-cinequest li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+    
+        .about-cinequest li:before {
+            content: "•"; /* Bullet point */
+            position: absolute;
+            left: 0;
+            color: #ff2d55; /* Example color */
+        }
+    
+        .about-cinequest p {
+            color: #666;
+        }
+    </style>
+    </div>
+    <%- include('partials/footer') %>
+    <script>
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.querySelector('.navbar-menu').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
+
