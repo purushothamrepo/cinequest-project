@@ -42,8 +42,7 @@ app.get("/result/:id", async (req, res) => {
 app.get("/about", (req, res) => {
     const aboutMeInfo = {
         name: "purushotham",
-        bio: "Your Bio",
-        hobbies: ["Hobby 1", "Hobby 2", "Hobby 3"],
+        
     };
     res.render("about", { aboutMeInfo });
 });
@@ -52,6 +51,6 @@ app.get("*", (req, res) => {
     res.send("Go back! Illegal response");
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server has started at port ${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log(`Server has started at port `);
 });
